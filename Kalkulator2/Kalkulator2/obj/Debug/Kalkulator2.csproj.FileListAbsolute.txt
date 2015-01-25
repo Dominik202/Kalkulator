@@ -1,0 +1,9 @@
+c:\users\dominik\documents\visual studio 2013\Projects\Kalkulator2\Kalkulator2\bin\Debug\Kalkulator2.exe.config
+c:\users\dominik\documents\visual studio 2013\Projects\Kalkulator2\Kalkulator2\bin\Debug\Kalkulator2.exe
+c:\users\dominik\documents\visual studio 2013\Projects\Kalkulator2\Kalkulator2\bin\Debug\Kalkulator2.pdb
+c:\users\dominik\documents\visual studio 2013\Projects\Kalkulator2\Kalkulator2\obj\Debug\Kalkulator2.Form1.resources
+c:\users\dominik\documents\visual studio 2013\Projects\Kalkulator2\Kalkulator2\obj\Debug\Kalkulator2.Properties.Resources.resources
+c:\users\dominik\documents\visual studio 2013\Projects\Kalkulator2\Kalkulator2\obj\Debug\Kalkulator2.csproj.GenerateResource.Cache
+c:\users\dominik\documents\visual studio 2013\Projects\Kalkulator2\Kalkulator2\obj\Debug\Kalkulator2.exe
+c:\users\dominik\documents\visual studio 2013\Projects\Kalkulator2\Kalkulator2\obj\Debug\Kalkulator2.pdb
+C:\Users\Dominik\Documents\Visual Studio 2013\Projects\Kalkulator2\Kalkulator2\obj\Debug\Kalkulator2.csprojResolveAssemblyReference.cache

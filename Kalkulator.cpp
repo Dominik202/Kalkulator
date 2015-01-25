@@ -3,22 +3,27 @@
 #include<math.h>
 
 using namespace std;
-
+class przelicznik{
+public:
 	double m = 1.609344;
 	double km_mi(double km){ return km / m; }
 	double mi_km(double mi){ return mi*m; }
-
-
+};
+class dzialania{
+public:
 	double mnozenie(double a, double b){ return a*b; }
 	double dzielenie(double a, double b){ return a / b; }
 	double dodawanie(double a, double b){ return a + b; }
 	double odejmowanie(double a, double b){ return a - b; }
-	double pierwiastek(double a, double b){ return pow(a, 1./b); }
+	double pierwiastek(double a, double b){ return pow(a, 1. / b); }
 	double potega(double a, double b){ return pow(a, b); }
-
+};
 int main(){
 	int l1,l2,l3;
 	double a, b;
+	dzialania wynik;
+	przelicznik wynik1;
+
 while (1){
 		cout << "WPISZ LICZBE ABY WYBRAC NUMER Z MENU:\n"
 			<< "1)Przelicznik\n"
@@ -51,7 +56,7 @@ while (1){
 						cin.sync();
 						cin >> a;
 					}
-					cout << a << " mil=" << mi_km(a) << " kilometrow\n";
+					cout << a << " mil=" << wynik1.mi_km(a) << " kilometrow\n";
 					break;
 				}
 				else if (l2 == 2){
@@ -65,7 +70,7 @@ while (1){
 						cin.sync();
 						cin >> a;
 					}
-					cout << a << " kilometrow=" << km_mi(a) << " mil\n";
+					cout << a << " kilometrow=" << wynik1.km_mi(a) << " mil\n";
 					break;
 				}
 				else cout << "Musisz podac liczbe z menu\n";
@@ -90,7 +95,8 @@ while (1){
 					cin.sync();
 					cin >> a >> b;
 				}
-				cout << a << "+" << b << "=" << dodawanie(a, b)<<endl;
+				//wynik.dodawanie(a, b);
+				cout << a << "+" << b << "=" << wynik.dodawanie(a, b)<<endl;
 				break;
 			}
 			else if (l3 == 2){
@@ -102,7 +108,8 @@ while (1){
 					cin.sync();
 					cin >> a >> b;
 				}
-				cout << a << "-" << b << "=" << odejmowanie(a, b) << endl;
+				//wynik = odejmowanie(a, b);
+				cout << a << "-" << b << "=" << wynik.odejmowanie(a, b) << endl;
 				break;
 			}
 			else if (l3 == 3){
@@ -114,7 +121,8 @@ while (1){
 					cin.sync();
 					cin >> a >> b;
 				}
-				cout << a << "*" << b << "=" << mnozenie(a, b) << endl;
+				//wynik = mnozenie(a, b);
+				cout << a << "*" << b << "=" << wynik.mnozenie(a, b) << endl;
 				break;
 			}
 			else if (l3 == 4){
@@ -133,7 +141,8 @@ while (1){
 					cin.sync();
 					cin >> b;
 				}
-				cout << a << "/" << b << "=" << dzielenie(a, b) << endl;
+				//wynik = dzielenie(a, b);
+				cout << a << "/" << b << "=" << wynik.dzielenie(a, b) << endl;
 				break;
 			}
 			else if (l3 == 5){
@@ -154,7 +163,8 @@ while (1){
 						cin.sync();
 						cin >> a;
 					}
-					cout << "Pierwiastek  " << b << "stopnia z liczby" << a << "=" << pierwiastek(a, b) << endl;
+					//wynik = pierwiastek(a, b);
+					cout << "Pierwiastek  " << b << "stopnia z liczby" << a << "=" << wynik.pierwiastek(a, b) << endl;
 					break;
 				}
 				else{
@@ -166,7 +176,8 @@ while (1){
 						cin.sync();
 						cin >> a;
 					}
-					cout << "Pierwiastek  " << b << "stopnia z liczby" << a << "=" << pierwiastek(a, b) << endl;
+					//wynik = pierwiastek(a, b);
+					cout << "Pierwiastek  " << b << "stopnia z liczby" << a << "=" << wynik.pierwiastek(a, b) << endl;
 					break;
 				}
 			}
@@ -187,7 +198,8 @@ while (1){
 					cin.sync();
 					cin >>b;
 				}
-				cout << "a^b=" <<potega(a, b) << endl;
+				//wynik = potega(a, b);
+				cout << "a^b=" <<wynik.potega(a, b) << endl;
 				break;
 			}
 			else cout << "Musisz podac liczbe z menu\n";
