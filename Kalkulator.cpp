@@ -1,29 +1,49 @@
+/**
+	\brief Autorzy:Dominik Platos, Dorota Wrona. Projekt Kalkulator
+	\details Program konsolowy realizujacy proste dzialania na liczbach. Umozliwia dodawanie, odejmowanie, mnozenie, dzielenie, potegowanie oraz pierwiastkowanie. Posiada takze przelicznik km na mile oraz mil na km
+**/
+
 #include<iostream>
 #include<stdlib.h>
 #include<math.h>
 
 using namespace std;
+/**
+	\brief Klasa przelicznik
+	\details Zawiera proste operacje polegajace na zamianie kilometrow na mile oraz mil na kilometry
+**/
 class przelicznik{
 public:
 	double m = 1.609344;
 	double km_mi(double km){ return km / m; }
 	double mi_km(double mi){ return mi*m; }
 };
+/**
+\brief Klasa dzialania
+\details Zawiera proste operacje polegajace na dodawaniu, odejmowaniu, mnozeniu, dzieleniu oraz pierwiastkowaniu. Obsluguje liczby zmiennoprzecinkowe.
+**/
 class dzialania{
 public:
-	double mnozenie(double a, double b){ return a*b; }
-	double dzielenie(double a, double b){ return a / b; }
-	double dodawanie(double a, double b){ return a + b; }
-	double odejmowanie(double a, double b){ return a - b; }
-	double pierwiastek(double a, double b){ return pow(a, 1. / b); }
-	double potega(double a, double b){ return pow(a, b); }
+	double mnozenie(double a, double b){ return a*b; }/// Funkcja mnozenia
+	double dzielenie(double a, double b){ return a / b; }/// funkcja dzielenia
+	double dodawanie(double a, double b){ return a + b; }/// funkcja dodawania
+	double odejmowanie(double a, double b){ return a - b; }/// funkcja odejmowania
+	double pierwiastek(double a, double b){ return pow(a, 1. / b); }///funkcja pierwiastkowania
+	double potega(double a, double b){ return pow(a, b); }/// potegowanie
 };
 int main(){
-	int l1,l2,l3;
-	double a, b;
-	dzialania wynik;
-	przelicznik wynik1;
-
+	/**
+	\brief Funkcja Main
+	\details Funkcja odpowiada za caly konsolowy interfejs z uzytkownikiem przy pomocy prostych petli umozliwiajacych wybor z menu za posrednictwem odpowiednich cyfr.
+	**/
+	int l1,l2,l3;///zmienne sterujace petlami
+	double a, b;///zmienne odpowiedzialne za dzialania
+	dzialania wynik;///obiekt klasy dzialania wyswietlajacy na ekran poprawny wynik
+	przelicznik wynik1;///obiekt klasy przelicznik 
+	/**
+	\brief Petla sterujaca
+	\details Umozliwia wybor z menu odpowiedniego dla uzytkownika dzialania
+	**/
 while (1){
 		cout << "WPISZ LICZBE ABY WYBRAC NUMER Z MENU:\n"
 			<< "1)Przelicznik\n"
@@ -38,9 +58,9 @@ while (1){
 			cin.sync();
 			cin >> l1;
 		}
-		switch (l1){
+		switch (l1){///Instrukcja warunkowa Odpowiedzialna za przeniesienie uzytkownika w odpowiednie miejsce programu w zaleznosci od tego jakie operacje chce wykonac
 		case 1:
-			cout << "Co chcesz przeliczyc ?\n"
+			cout << "Co chcesz przeliczyc ?\n"///Wybor przez uzytkownika rodzaju przelicznika
 				<< "1)mile->kilometry\n"
 				<< "2)kilometry->mile\n";
 			while (1){
@@ -76,7 +96,7 @@ while (1){
 				else cout << "Musisz podac liczbe z menu\n";
 			}
 			break;
-		case 2:
+		case 2:///Odniesienie do szeregu operacji na liczbach zawartych w klasie dzialania
 			cout << "Wybierz rodzaj dzialania:\n"
 				<< "Pamietaj, ze liczby zmiennoprzecinkowe oddzielamy kropka\n"
 				<< "1)dodawanie\n"
@@ -207,6 +227,7 @@ while (1){
 		}
 		if (l1 == 3) break;
 	}
+	///koniec dzialania programu, wszystkie petle zakonczyly sie prawidlowo.
 system("Pause");
 		return 0;
 }
