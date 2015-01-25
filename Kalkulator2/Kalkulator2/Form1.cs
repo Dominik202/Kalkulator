@@ -1,4 +1,12 @@
-﻿using System;
+﻿/**
+  
+  \details Aplikacja okienkowa kalkulatora wraz z przelicznikiem jednostek
+   
+  \brief Autorzy: Dominik Platos, Dorota Wrona
+ 
+**/
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,25 +16,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Kalkulator2
+namespace Kalkulator2  /// przesten deklaracji kalkulatora
 {
-    public partial class Form1 : Form
+    public partial class Form1 : Form /// klasa glowna 
     {
-        public double a;
+        public double a;  
         public double b;
-        private string dzialanie="";
+        private string dzialanie=""; ///zmienna string odopwiedzialna za rodzaj dzialania
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            textBox1.Text += button2.Text;
-            textBox2.Text += button2.Text;
-        }
+       
 
-        private void wyjścieToolStripMenuItem_Click(object sender, EventArgs e)
+        private void wyjścieToolStripMenuItem_Click(object sender, EventArgs e) /// klawisz odpowiedzialny za zamykanie aplikacji
         {
             Application.Exit();
         }
@@ -36,7 +40,7 @@ namespace Kalkulator2
 
         }
 
-        private void button11_Click(object sender, EventArgs e)
+        private void button11_Click(object sender, EventArgs e)  ///przycisk odpowiedzialny za kasowanie wpisanych w wyswietlaczu kalkulatora liczb
         {
             textBox1.Text = string.Empty;
             textBox2.Text = string.Empty;
@@ -46,82 +50,76 @@ namespace Kalkulator2
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            textBox1.Text += button1.Text;
-            textBox2.Text += button1.Text;
-            
 
-        }
-        public void wynik()
+        public void wynik()  ///definicje operacji arytmetycznych 
         {
             b = System.Double.Parse(textBox1.Text);
-            switch(dzialanie)
+            switch(dzialanie) ///wybor wykonywanego dzialania zalezy od nacisnietego klawisza
             {
                 case "+":
-                    a = a + b;
+                    a = a + b;  /// operacja dodawnia
                     dzialanie = "";
                     break;
                 case "-":
-                    a = a - b;
+                    a = a - b; /// operacja odejmowania
                     dzialanie = "";
                     break;
                 case "/":
-                    if (b != 0) a = a / b;
+                    if (b != 0) a = a / b; ///operacja dzielenia
                     else textBox2.Text = "Nie dziel przez 0";
                     dzialanie = "";
                     break;
                 case "*":
-                    a = a * b;
+                    a = a * b;  /// operacja mnozenia
                     dzialanie = "";
                     break;
                 case "^":
-                    a = Math.Pow(a,b);
+                    a = Math.Pow(a,b);  ///operacja potegowania
                     dzialanie = "";
                     break;
             }
-            textBox1.Text = a.ToString();
+            textBox1.Text = a.ToString(); /// funkcja odpowiedzialna za wyswiwetlanie wyniku na wyswietlaczu kalkulatora
             
         }
-        public void przelicznik()
+        public void przelicznik() ///definicje przelicznika
         {
             
-            switch (dzialanie)
+            switch (dzialanie)  ///wybor wykonywanego rodzaju przeliczania
             {
 
                 case "kmm":
-                    a = a / 1.609344;
+                    a = a / 1.609344; ///przeliczanie kilometrow na mile
                     dzialanie = "";
                     
                     break;
                 case "mkm":
-                    a = a * 1.609344;
+                    a = a * 1.609344; ///przeliczanie mil na kilometry
                     dzialanie = "";
                     textBox2.Text = textBox1.Text;
                     break;
                 case "mft":
-                    a = a / 0.3048;
+                    a = a / 0.3048;  ///przeliczanie metrow na stopy
                     dzialanie = "";
                     
                     break;
-                case "ftm":
+                case "ftm":  ///przeliczanie stop na metry
                     a = a * 0.3048;
                     dzialanie = "";
                     
                     break;
-                case "minus":
+                case "minus":  ///obsluga liczb przeciwnych
                     a = -a;
                     dzialanie = "";
                     break;
             }
-            textBox1.Text = a.ToString();
+            textBox1.Text = a.ToString();  ///konwersja doubla na stringa
             dzialanie = "przel";
             //textBox2.Text = textBox1.Text;
         }
 
-        private void button16_Click(object sender, EventArgs e)
+        private void button16_Click(object sender, EventArgs e)  ///obsluga klawisza '='
         {
-            wynik();
+            wynik(); ///wyswietlanie wyniku
             dzialanie = "=";
             
         }
@@ -130,7 +128,7 @@ namespace Kalkulator2
         {
             if (dzialanie == "")
             {
-                a = System.Double.Parse(textBox1.Text);
+                a = System.Double.Parse(textBox1.Text); ///obsluga klawisza '+'
                 dzialanie = "+";
                 textBox1.Text = "";
                 textBox2.Text += "+";
@@ -138,12 +136,31 @@ namespace Kalkulator2
             else
             {
                 wynik();
-                a = System.Double.Parse(textBox1.Text);
+                a = System.Double.Parse(textBox1.Text);///obsluga klawisza '+' w przypadku operacji wieloargumentowych
                 dzialanie = "+";
                 textBox2.Text = textBox1.Text;
                 textBox1.Text = "";
                 textBox2.Text += "+";
             }
+        }
+        /**
+  
+  \details Przyciski liczbowe
+   
+  \brief Szereg przyciskow odpowiedzialnych za wyswietlanie przypisanych im wartosci na wyswietlaczu kalkulatora
+ 
+**/
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox1.Text += button1.Text;
+            textBox2.Text += button1.Text;
+
+
+        }
+        private void button2_Click(object sender, EventArgs e)  
+        {
+            textBox1.Text += button2.Text;
+            textBox2.Text += button2.Text;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -204,14 +221,14 @@ namespace Kalkulator2
         {
             if (dzialanie == "")
             {
-                a = System.Double.Parse(textBox1.Text);
-                dzialanie = "-";
+                a = System.Double.Parse(textBox1.Text);  ///obsluga klawisza '-'
+                dzialanie = "-"; 
                 textBox1.Text = "";
                 textBox2.Text += "-";
             }
             else
             {
-                wynik();
+                wynik();  ///obsluga klawisza '-' w przypadku operacji wieloargumentowych
                 a = System.Double.Parse(textBox1.Text);
                 dzialanie = "-";
                 textBox2.Text = textBox1.Text;
@@ -224,7 +241,7 @@ namespace Kalkulator2
         {
             if (dzialanie == "")
             {
-                a = System.Double.Parse(textBox1.Text);
+                a = System.Double.Parse(textBox1.Text); ///obsluga klawisza '/'
                 dzialanie = "/";
                 textBox1.Text = "";
                 textBox2.Text += "/";
@@ -232,7 +249,7 @@ namespace Kalkulator2
             else
             {
                 wynik();
-                a = System.Double.Parse(textBox1.Text);
+                a = System.Double.Parse(textBox1.Text);///obsluga klawisza '/' w przypadku operacji wieloargumentowych
                 dzialanie = "/";
                 textBox2.Text = textBox1.Text;
                 textBox1.Text = "";
@@ -245,7 +262,7 @@ namespace Kalkulator2
 
             if (dzialanie == "")
             {
-                a = System.Double.Parse(textBox1.Text);
+                a = System.Double.Parse(textBox1.Text); ///obsluga klawisza '*'
                 dzialanie = "*";               
                 textBox1.Text = "";
                 textBox2.Text += "*";
@@ -253,7 +270,7 @@ namespace Kalkulator2
             else
             {
                 wynik();
-                a = System.Double.Parse(textBox1.Text);
+                a = System.Double.Parse(textBox1.Text); ///obsluga klawisza '*' w przypadku operacji wieloargumentowych 
                 dzialanie = "*";
                 textBox2.Text = textBox1.Text;
                 textBox1.Text = "";
@@ -265,7 +282,7 @@ namespace Kalkulator2
         {
             if (dzialanie == "")
             {
-                a = System.Double.Parse(textBox1.Text);
+                a = System.Double.Parse(textBox1.Text);  ///obsluga klawisza '^'
                 dzialanie = "^";
                 textBox1.Text = "";
                 textBox2.Text += "^";
@@ -273,7 +290,7 @@ namespace Kalkulator2
             else
             {
                 wynik();
-                a = System.Double.Parse(textBox1.Text);
+                a = System.Double.Parse(textBox1.Text); ///obsluga klawisza '^' w przypadku operacji wieloargumentowych
                 dzialanie = "^";
                 textBox2.Text = textBox1.Text;
                 textBox1.Text = "";
@@ -285,7 +302,7 @@ namespace Kalkulator2
         {
             if (dzialanie == "")
             {
-                a = System.Double.Parse(textBox1.Text);
+                a = System.Double.Parse(textBox1.Text); ///obsluga klawisza 'km->mile' 
                 dzialanie = "kmm";
                 textBox1.Text = "";
                 przelicznik();
@@ -293,7 +310,7 @@ namespace Kalkulator2
             else
             {
                 wynik();
-                a = System.Double.Parse(textBox1.Text);
+                a = System.Double.Parse(textBox1.Text); ///obsluga klawisza 'km->mile' w przypadku operacji wieloargumentowych
                 dzialanie = "kmm";
                 textBox2.Text = textBox1.Text;
                 textBox1.Text = "";
@@ -305,7 +322,7 @@ namespace Kalkulator2
         {
             if (dzialanie == "")
             {
-                a = System.Double.Parse(textBox1.Text);
+                a = System.Double.Parse(textBox1.Text); ///obsluga klawisza 'mile->km' 
                 dzialanie = "mkm";
                 textBox1.Text = "";
                 przelicznik();
@@ -313,7 +330,7 @@ namespace Kalkulator2
             else
             {
                 wynik();
-                a = System.Double.Parse(textBox1.Text);
+                a = System.Double.Parse(textBox1.Text); ///obsluga klawisza 'mile->km' w przypadku operacji wieloargumentowych
                 dzialanie = "mkm";
                 textBox2.Text = textBox1.Text;
                 textBox1.Text = "";
@@ -325,7 +342,7 @@ namespace Kalkulator2
         {
             if (dzialanie == "")
             {
-                a = System.Double.Parse(textBox1.Text);
+                a = System.Double.Parse(textBox1.Text); ///obsluga klawisza 'm->stopy'
                 dzialanie = "mft";
                 textBox1.Text = "";
                 przelicznik();
@@ -334,7 +351,7 @@ namespace Kalkulator2
             {
                 wynik();
                 a = System.Double.Parse(textBox1.Text);
-                dzialanie = "mft";
+                dzialanie = "mft"; ///obsluga klawisza 'm->stopy' w przypadku operacji wieloargumentowych
                 textBox2.Text = textBox1.Text;
                 textBox1.Text = "";
                 przelicznik();
@@ -345,15 +362,15 @@ namespace Kalkulator2
         {
             if (dzialanie == "")
             {
-                a = System.Double.Parse(textBox1.Text);
-                dzialanie = "ftm";
+                a = System.Double.Parse(textBox1.Text); ///obsluga klawisza 'stopy->m'
+                dzialanie = "ftm"; 
                 textBox1.Text = "";
                 przelicznik();
             }
             else
             {
                 wynik();
-                a = System.Double.Parse(textBox1.Text);
+                a = System.Double.Parse(textBox1.Text); ///obsluga klawisza 'stopy->m' w przypadku operacji wieloargumentowych
                 dzialanie = "ftm";
                 textBox2.Text = textBox1.Text;
                 textBox1.Text = "";
@@ -365,7 +382,7 @@ namespace Kalkulator2
         {
             if (dzialanie == "")
             {
-                a = (System.Double.Parse(textBox1.Text));
+                a = (System.Double.Parse(textBox1.Text));  //////obsluga klawisza zwiazanego z liczbami odwrotnymi
                 dzialanie = "minus";
                 textBox1.Text = "";
                 przelicznik();
@@ -379,6 +396,11 @@ namespace Kalkulator2
                 textBox1.Text = "";
                 przelicznik();
             }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
 

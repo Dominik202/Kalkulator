@@ -7,3 +7,19 @@ c:\users\dominik\documents\visual studio 2013\Projects\Kalkulator2\Kalkulator2\o
 c:\users\dominik\documents\visual studio 2013\Projects\Kalkulator2\Kalkulator2\obj\Debug\Kalkulator2.exe
 c:\users\dominik\documents\visual studio 2013\Projects\Kalkulator2\Kalkulator2\obj\Debug\Kalkulator2.pdb
 C:\Users\Dominik\Documents\Visual Studio 2013\Projects\Kalkulator2\Kalkulator2\obj\Debug\Kalkulator2.csprojResolveAssemblyReference.cache
+C:\Users\Dorotka\Desktop\Kalkulator2\Kalkulator2\bin\Debug\Kalkulator2.exe.config
+C:\Users\Dorotka\Desktop\Kalkulator2\Kalkulator2\obj\Debug\Kalkulator2.exe
+C:\Users\Dorotka\Desktop\Kalkulator2\Kalkulator2\obj\Debug\Kalkulator2.pdb
+C:\Users\Dorotka\Desktop\Kalkulator2\Kalkulator2\bin\Debug\Kalkulator2.exe
+C:\Users\Dorotka\Desktop\Kalkulator2\Kalkulator2\bin\Debug\Kalkulator2.pdb
+C:\Users\Dorotka\Desktop\Kalkulator2\Kalkulator2\bin\Debug\mscorlib.dll
+C:\Users\Dorotka\Desktop\Kalkulator2\Kalkulator2\bin\Debug\pl\mscorlib.resources.dll
+C:\Users\Dorotka\Desktop\Kalkulator2\Kalkulator2\bin\Debug\normidna.nlp
+C:\Users\Dorotka\Desktop\Kalkulator2\Kalkulator2\bin\Debug\normnfc.nlp
+C:\Users\Dorotka\Desktop\Kalkulator2\Kalkulator2\bin\Debug\normnfd.nlp
+C:\Users\Dorotka\Desktop\Kalkulator2\Kalkulator2\bin\Debug\normnfkc.nlp
+C:\Users\Dorotka\Desktop\Kalkulator2\Kalkulator2\bin\Debug\normnfkd.nlp
+C:\Users\Dorotka\Desktop\Kalkulator2\Kalkulator2\obj\Debug\Kalkulator2.csprojResolveAssemblyReference.cache
+C:\Users\Dorotka\Desktop\Kalkulator2\Kalkulator2\obj\Debug\Kalkulator2.Form1.resources
+C:\Users\Dorotka\Desktop\Kalkulator2\Kalkulator2\obj\Debug\Kalkulator2.Properties.Resources.resources
+C:\Users\Dorotka\Desktop\Kalkulator2\Kalkulator2\obj\Debug\Kalkulator2.csproj.GenerateResource.Cache
